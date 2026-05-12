@@ -45,28 +45,31 @@
 
 ## Data Model:
 
-<img width="815" height="606" alt="image" src="[https://github.com/user-attachments/assets/fda3120d-101a-4576-89fa-71f3c01d0615](https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Data%20Model%20Diagram%20-%20Digital%20Marketing.png)" />
+![Data Model - Star Schema]([https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Dashboard-DM.png](https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Data%20Model%20Diagram%20-%20Digital%20Marketing.png))
 
-```
+### Key Engineering Decisions
 
-## Key Engineering Decisions:
+**1. Ratio Metrics as DAX Measures — Not Power Query Columns**
 
-### 1. Ratio Metrics as DAX Measures — Not Power Query Columns
+> All ratio KPIs (CPE, CPU) are DAX measures to ensure mathematically correct aggregation across every filter context. Pre-calculating ratios row-by-row produces incorrect totals when aggregated.
 
-All ratio KPIs (`CPE`, `CPU`) were implemented as DAX measures to ensure mathematically correct aggregation across every filter context.
+**2. Weighted Conversion Rate**
 
-Pre-calculating ratios row-by-row in Power Query can produce incorrect totals when aggregated across campaigns, platforms, or time periods.
-
----
-
-### 2. Weighted Conversion Rate
-
-A simple average such as:
+> `AVERAGE([conversion_rate])` was intentionally avoided. Each platform manages unequal campaign volumes, making a simple average statistically misleading. A weighted average using `audience_reach` as the weighting factor was applied instead.
 
 ```dax
-AVERAGE([conversion_rate])
+Weighted Conversion Rate =
+DIVIDE(
+    SUMX(fact_campaigns, [conversion_rate] * [audience_reach]),
+    SUM(fact_campaigns[audience_reach])
+)
 
----
+Cost Per Engagement =
+DIVIDE(SUM([ad_spend]), SUM([engagement_metric]))
+
+Cost Per User =
+DIVIDE(SUM([ad_spend]), SUM([audience_reach]))
+```
 
 ## 🔍 Key Findings
 
@@ -76,19 +79,9 @@ AVERAGE([conversion_rate])
 
 ---
 
-## 🚀 How to Use
-
-1. Download `Global_Horizon_Dashboard.xlsx`
-2. Open with **Excel 365 or Excel 2019+** *(Power Pivot required)*
-3. Navigate to the **Dashboard** tab
-4. Filter using slicers: **Duration · Audience · Region**
-5. For technical review: `Data → Manage Data Model`
-
----
-
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/iamzulfiqarali)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zulfqara))
 
 </div>
