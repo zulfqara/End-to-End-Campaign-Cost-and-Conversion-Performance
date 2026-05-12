@@ -105,7 +105,7 @@ DIVIDE(SUM([ad_spend]), SUM([audience_reach]))
 ---
 
 ##  Dataset Source:
-    The dataset was sourced from Kaggle: [Digital Marketing Campaigns for SMEs](https://www.kaggle.com/datasets/farhanmittho/digital-marketing-campaigns-for-smes)
+The dataset was sourced from Kaggle: [Digital Marketing Campaigns for SMEs](https://www.kaggle.com/datasets/farhanmittho/digital-marketing-campaigns-for-smes)
 ---
 
 <div align="center">
