@@ -14,6 +14,31 @@
 
 ---
 
+## Client Context: Global Horizon Agency
+
+This data architecture and reporting solution was developed for **Global Horizon Agency**, a digital marketing firm managing high-volume ad campaigns across digital platforms.
+
+**The Business Problem:**
+Previously, the agency relied on fragmented, platform-specific CSV exports to track performance. This siloed approach made it impossible to accurately compare cross-channel efficiency or calculate true Cost Per Engagement at the macro level.
+
+**The Solution:**
+By designing a centralized reporting pipeline and an interactive executive dashboard, Global Horizon leadership can now monitor core metrics like Cost Per Engagement and Weighted Conversion Rates in real-time. This allows stakeholders to quickly identify underperforming campaigns and confidently reallocate marketing budgets based on mathematically sound data models.
+
+---
+
+
+## Project Summary
+
+This project delivers an end-to-end **Campaign Cost & Conversion Performance Dashboard** designed to evaluate campaign efficiency, audience engagement, and overall return on ad spend across multiple digital channels. 
+
+The solution bypasses standard spreadsheet limitations by utilizing an enterprise-grade business intelligence workflow. Raw marketing data was ingested via Power Query, where rigorous data quality assurance was performed to establish a clean, refined dataset prior to modeling. The data was then structured into a robust Star Schema within Power Pivot. 
+
+To ensure mathematical accuracy across all dynamic filter contexts, complex ratio metrics (such as Cost Per Engagement) and weighted conversion rates were explicitly programmed using DAX. The final output is a fully interactive, dark-themed user interface with locked-down navigation, providing stakeholders with a seamless, application-like experience to uncover actionable marketing insights.
+
+**Key Technologies:** 
+Excel, Power Query (ETL & QA), Power Pivot (Star Schema Data Modeling), DAX (Advanced Aggregations), UI/UX Design.
+
+
 ## 🛠️ Skills Demonstrated
 
 | Category | Skills |
