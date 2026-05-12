@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Global Horizon Agency
+# <img src="logo.png" align="absmiddle" width="45"> Global Horion Agency
 ## Campaign Cost & Conversion Performance Dashboard
 
 [![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)](https://www.microsoft.com/excel)
