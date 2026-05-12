@@ -45,7 +45,7 @@
 
 ## Data Model:
 
-![Data Model - Star Schema]([https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Dashboard-DM.png](https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Data%20Model%20Diagram%20-%20Digital%20Marketing.png))
+![Data Model - Star Schema](https://raw.githubusercontent.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/main/Data%20Model%20Diagram%20-%20Digital%20Marketing.png)
 
 ### Key Engineering Decisions
 
