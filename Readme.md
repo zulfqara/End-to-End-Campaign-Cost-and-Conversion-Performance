@@ -95,6 +95,16 @@ DIVIDE(SUM([ad_spend]), SUM([engagement_metric]))
 Cost Per User =
 DIVIDE(SUM([ad_spend]), SUM([audience_reach]))
 ```
+### 🛑 Technical Challenge: Overcoming VertiPaq Engine Data Locks
+During the development of the Star Schema, I encountered a complex synchronization issue between Excel’s two data engines (Power Query's M-Engine and Power Pivot's VertiPaq engine). After deleting a fact table query in the ETL layer, a "ghost table" remained cached in the Data Model, completely locking the schema and preventing new relationships from being built.
+
+**The Solution:**
+Instead of abandoning the file, I systematically debugged the Data Model architecture:
+1. **Isolated the Cache:** Purged all dependent DAX measures, implicit PivotTable connections, and active schema relationships to attempt an unlock.
+2. **Identified the Root Cause:** Discovered a silent background naming conflict (`fact_campaigns` vs `fact_campaigns_1`). The Data Model had locked the ghost table because a newly loaded query with an identical name was attempting to overwrite it while the cache was still engaged.
+3. **The Fix:** By syncing the query name perfectly in the M-Engine and refreshing the connection, I forced the engines to "handshake" and overwrite the corrupted cache, successfully flushing the ghost table without rebuilding the entire workbook. 
+
+**Key Takeaway:** This deeply reinforced my understanding of how Excel separates its ETL pipeline (Power Query) from its compressed data storage layer (Power Pivot), and how to safely manipulate the backend XML architecture when the UI fails.
 
 ## 🔍 Key Findings
 
