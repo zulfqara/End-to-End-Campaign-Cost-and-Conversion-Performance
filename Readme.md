@@ -8,7 +8,8 @@
 [![Power Pivot](https://img.shields.io/badge/Power_Pivot-217346?style=for-the-badge&logo=microsoft&logoColor=white)](https://docs.microsoft.com/power-pivot)
 [![DAX](https://img.shields.io/badge/DAX-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://docs.microsoft.com/dax)
 
-![Dashboard Preview](https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Dashboard-DM.png)
+![Dashboard Preview]([https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance/blob/main/Dashboard-DM.png](https://github.com/zulfqara/End-to-End-Campaign-Cost-and-Conversion-Performance-Analysis-Excel/blob/main/Dashboard-DM.png
+))
 
 </div>
 
